@@ -115,3 +115,87 @@ int main() {
 
     return 0;
 }
+
+
+///Version mejorada
+#include "LED.h"
+#include "botones.h"
+#include "display_7seg.h"
+#include "LCD_nokia5110.h"
+#include "pico/stdlib.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#define START_DELAY_MIN_MS 1000
+#define START_DELAY_MAX_MS 10000
+#define MAX_GAME_TIME_SEC 10
+
+int main() {
+    // Inicialización de los componentes
+    leds_init();
+    botones_init();
+    display_7seg_init();
+    LCD_nokia5110_init();
+    
+    // Semilla aleatoria para generar números aleatorios
+    srand(time(NULL));
+
+    while (1) {
+        // Esperar a que se presione el botón de start
+        while (!leer_botones(BOTON_START_PIN)) {
+            sleep_ms(100);
+        }
+
+        // Ejecutar la secuencia de luces
+        led_sequence();
+        sleep_ms(1000); // Espera adicional después de la secuencia de luces
+
+        // Generar un tiempo aleatorio entre START_DELAY_MIN_MS y START_DELAY_MAX_MS
+        int start_delay = rand() % (START_DELAY_MAX_MS - START_DELAY_MIN_MS + 1) + START_DELAY_MIN_MS;
+        sleep_ms(start_delay); // Esperar el tiempo aleatorio
+        
+        // Encender un LED aleatorio (0, 1, 2)
+        int random_led = rand() % 3;
+        led_on(random_led);
+        int game_time_ms = 0; // Reiniciar el tiempo de juego
+        while (leer_botones(BOTON_CLEAR_PIN) || leer_botones(BOTON_YELLOW_PIN) || leer_botones(BOTON_RED_PIN)) {
+            // Verificar si se presionó algún botón
+            sleep_ms(100); // Pequeña pausa para evitar rebotes en el botón
+        }
+
+        // Verificar el botón presionado
+        uint64_t start_time = time_us_64();
+        while (1) {
+            if (leer_botones(BOTON_CLEAR_PIN)) {
+                game_time_ms += 1000;
+                if (game_time_ms >= MAX_GAME_TIME_SEC * 1000) {
+                    game_time_ms = MAX_GAME_TIME_SEC * 1000;
+                    break;
+                }
+            } else if (leer_botones(BOTON_YELLOW_PIN) || leer_botones(BOTON_RED_PIN)) {
+                game_time_ms += 1000;
+                if (game_time_ms >= MAX_GAME_TIME_SEC * 1000) {
+                    game_time_ms = MAX_GAME_TIME_SEC * 1000;
+                    break;
+                }
+            } else if (leer_botones(BOTON_START_PIN)) {
+                // Botón de start presionado nuevamente, salir del bucle
+                break;
+            }
+
+            if (time_us_64() - start_time >= 10000000) { // 10 segundos
+                break;
+            }
+            sleep_ms(100);
+        }
+        led_off(random_led);
+        
+        // Mostrar el tiempo de juego en los 7 segmentos
+        int seconds = game_time_ms / 1000;
+        int milliseconds = game_time_ms % 1000;
+        display_7seg_show_number(seconds * 1000 + milliseconds);
+    }
+
+    return 0;
+}
