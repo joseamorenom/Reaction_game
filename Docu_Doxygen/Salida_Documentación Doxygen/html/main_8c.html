@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>React Game: Referencia del archivo C:/Users/amesa/OneDrive/Personal/PC anterior/Escritorio/React_game - doxy/main.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">React Game<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">Juego de reacción basado en Raspberry Pi Pico W</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_c263ac44ae6fcdb44edd7ea97aa40dd6.html">React_game - doxy</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">defines</a> &#124;
+<a href="#func-members">Funciones</a>  </div>
+  <div class="headertitle"><div class="title">Referencia del archivo main.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementación de la lógica del juego con mensajes en pantalla.  
+<a href="#details">Más...</a></p>
+<div class="textblock"><code>#include &quot;LCD_nokia5110.h&quot;</code><br />
+<code>#include &quot;pico/stdlib.h&quot;</code><br />
+<code>#include &quot;hardware/gpio.h&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_l_e_d_8h_source.html">LED.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="botones_8h_source.html">botones.h</a>&quot;</code><br />
+<code>#include &quot;display_7seg.h&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:ab9824ab080c30006c1baaa0dd7e863c5" id="r_ab9824ab080c30006c1baaa0dd7e863c5"><td class="memItemLeft" align="right" valign="top"><a id="ab9824ab080c30006c1baaa0dd7e863c5" name="ab9824ab080c30006c1baaa0dd7e863c5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LED_RED_PIN</b></td></tr>
+<tr class="separator:ab9824ab080c30006c1baaa0dd7e863c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3efbeab3ef9de8a67a070364621e01e6" id="r_a3efbeab3ef9de8a67a070364621e01e6"><td class="memItemLeft" align="right" valign="top"><a id="a3efbeab3ef9de8a67a070364621e01e6" name="a3efbeab3ef9de8a67a070364621e01e6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LED_YELLOW_PIN</b></td></tr>
+<tr class="separator:a3efbeab3ef9de8a67a070364621e01e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58a13e127af8af13577592fbfd250268" id="r_a58a13e127af8af13577592fbfd250268"><td class="memItemLeft" align="right" valign="top"><a id="a58a13e127af8af13577592fbfd250268" name="a58a13e127af8af13577592fbfd250268"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LED_CLEAR_PIN</b></td></tr>
+<tr class="separator:a58a13e127af8af13577592fbfd250268"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0411f64ff1b702c2b2e6e721f032f750" id="r_a0411f64ff1b702c2b2e6e721f032f750"><td class="memItemLeft" align="right" valign="top"><a id="a0411f64ff1b702c2b2e6e721f032f750" name="a0411f64ff1b702c2b2e6e721f032f750"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BUTTON_1_PIN</b></td></tr>
+<tr class="separator:a0411f64ff1b702c2b2e6e721f032f750"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac965fc518b25b1ec0de10e3ac841b170" id="r_ac965fc518b25b1ec0de10e3ac841b170"><td class="memItemLeft" align="right" valign="top"><a id="ac965fc518b25b1ec0de10e3ac841b170" name="ac965fc518b25b1ec0de10e3ac841b170"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BUTTON_2_PIN</b></td></tr>
+<tr class="separator:ac965fc518b25b1ec0de10e3ac841b170"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0371ce39a54669bd1ef373bac05fdd4b" id="r_a0371ce39a54669bd1ef373bac05fdd4b"><td class="memItemLeft" align="right" valign="top"><a id="a0371ce39a54669bd1ef373bac05fdd4b" name="a0371ce39a54669bd1ef373bac05fdd4b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BUTTON_3_PIN</b></td></tr>
+<tr class="separator:a0371ce39a54669bd1ef373bac05fdd4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af727d34dc72e3f32bd32754111724a0b" id="r_af727d34dc72e3f32bd32754111724a0b"><td class="memItemLeft" align="right" valign="top"><a id="af727d34dc72e3f32bd32754111724a0b" name="af727d34dc72e3f32bd32754111724a0b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>START_BUTTON_PIN</b></td></tr>
+<tr class="separator:af727d34dc72e3f32bd32754111724a0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad57dfa0d30e09344626931f8f602eab1" id="r_ad57dfa0d30e09344626931f8f602eab1"><td class="memItemLeft" align="right" valign="top"><a id="ad57dfa0d30e09344626931f8f602eab1" name="ad57dfa0d30e09344626931f8f602eab1"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>GAME_TIME</b>&#160;&#160;&#160;10</td></tr>
+<tr class="separator:ad57dfa0d30e09344626931f8f602eab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ec3609f4f43eec41466c7753df3e07d" id="r_a1ec3609f4f43eec41466c7753df3e07d"><td class="memItemLeft" align="right" valign="top"><a id="a1ec3609f4f43eec41466c7753df3e07d" name="a1ec3609f4f43eec41466c7753df3e07d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>START_DELAY_MIN_MS</b>&#160;&#160;&#160;1000</td></tr>
+<tr class="separator:a1ec3609f4f43eec41466c7753df3e07d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae08d3373bed1f3257cf8f398d031ba3a" id="r_ae08d3373bed1f3257cf8f398d031ba3a"><td class="memItemLeft" align="right" valign="top"><a id="ae08d3373bed1f3257cf8f398d031ba3a" name="ae08d3373bed1f3257cf8f398d031ba3a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>START_DELAY_MAX_MS</b>&#160;&#160;&#160;10000</td></tr>
+<tr class="separator:ae08d3373bed1f3257cf8f398d031ba3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa002dd1f243261555940e864c72bd760" id="r_aa002dd1f243261555940e864c72bd760"><td class="memItemLeft" align="right" valign="top"><a id="aa002dd1f243261555940e864c72bd760" name="aa002dd1f243261555940e864c72bd760"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_GAME_TIME_SEC</b>&#160;&#160;&#160;10</td></tr>
+<tr class="separator:aa002dd1f243261555940e864c72bd760"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:ae160b845af25abfe0439d4c8fab251d4" id="r_ae160b845af25abfe0439d4c8fab251d4"><td class="memItemLeft" align="right" valign="top"><a id="ae160b845af25abfe0439d4c8fab251d4" name="ae160b845af25abfe0439d4c8fab251d4"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>generate_random_time</b> (int min, int max)</td></tr>
+<tr class="separator:ae160b845af25abfe0439d4c8fab251d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa82d13b402a3a0d733a570757dbcef7" id="r_aaa82d13b402a3a0d733a570757dbcef7"><td class="memItemLeft" align="right" valign="top"><a id="aaa82d13b402a3a0d733a570757dbcef7" name="aaa82d13b402a3a0d733a570757dbcef7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>display_press_button_message</b> ()</td></tr>
+<tr class="separator:aaa82d13b402a3a0d733a570757dbcef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad664f39f84110d7d17fea0295e83abd9" id="r_ad664f39f84110d7d17fea0295e83abd9"><td class="memItemLeft" align="right" valign="top"><a id="ad664f39f84110d7d17fea0295e83abd9" name="ad664f39f84110d7d17fea0295e83abd9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>display_game_over_message</b> ()</td></tr>
+<tr class="separator:ad664f39f84110d7d17fea0295e83abd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="memdesc:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función principal del programa.  <br /></td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Implementación de la lógica del juego con mensajes en pantalla. </p>
+<p>Implementación de la lógica completa del juego con LED, botones y 7 segmentos.</p>
+</div><h2 class="groupheader">Documentación de funciones</h2>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&#160;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Función principal del programa. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>0 si la ejecución fue exitosa. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>
