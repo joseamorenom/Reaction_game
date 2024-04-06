@@ -6,7 +6,7 @@
 // Inicialización de los pines de los LEDs
 void leds_init() {
     // Inicializamos la Raspberry Pi Pico W
-    //stdio_init_all();
+    stdio_init_all();
 
     // Pines de los LED como salida
     gpio_init(LED_CLEAR_PIN);

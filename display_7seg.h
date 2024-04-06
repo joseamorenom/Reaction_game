@@ -3,14 +3,20 @@
 #define DISPLAY_7SEG_H
 
 // Definiciones de pines para los segmentos del display de 7 segmentos
-#define SEGMENT_A_PIN   0
-#define SEGMENT_B_PIN   1
-#define SEGMENT_C_PIN   2
-#define SEGMENT_D_PIN   3
-#define SEGMENT_E_PIN   4
-#define SEGMENT_F_PIN   5
-#define SEGMENT_G_PIN   6
-#define SEGMENT_DP_PIN  7  //punto decimal
+#define SEGMENT_A_PIN   14
+#define SEGMENT_B_PIN   15
+#define SEGMENT_C_PIN   16
+#define SEGMENT_D_PIN   17
+#define SEGMENT_E_PIN   18
+#define SEGMENT_F_PIN   19
+#define SEGMENT_G_PIN   20
+//#define SEGMENT_DP_PIN  21  //punto decimal
+
+//Enable de los 7 segmentos
+#define DENABLE_ONE 27
+#define DENABLE_TWO 26
+#define DENABLE_THREE 22
+#define DENABLE_FOUR 21
 
 // Definiciones de los dígitos del display de 7 segmentos
 #define DIGIT_0    0b00111111
@@ -28,4 +34,8 @@
 // Prototipos de funciones
 void display_7seg_init();                           // Inicialización
 void display_7seg_show_number(int number);          // Muestra un número en los 4 dígitos del 7 segmentos
+void habilitar_7seg();
+void Deshab_7seg();
+void enables_init();
+
 #endif

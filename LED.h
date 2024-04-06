@@ -3,9 +3,9 @@
 #define LED_H
 
 // Definiciones de pines de los LEDs
-#define LED_CLEAR_PIN   0  // Pin del led transparente
-#define LED_YELLOW_PIN  1  // Pin del led amarillo
-#define LED_RED_PIN     2  // Pin del led rojo
+#define LED_CLEAR_PIN   2  // Pin del led transparente
+#define LED_YELLOW_PIN  3  // Pin del led amarillo
+#define LED_RED_PIN     4  // Pin del led rojo
 
 // Prototipos de las funciones
 void leds_init();             // Inicialización
